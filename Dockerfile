@@ -1,9 +1,9 @@
 #FROM kreait/php:7.1
-FROM php:7.3
+FROM php:7.1
 # Install prerequisites
 RUN apt-get update && apt-get install -y \
 curl
-RUN apt install  php7.3-bcmath 7.3.4-2
+RUN apt install  php7.1-bcmath
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer 
 
 # Install dependencies
