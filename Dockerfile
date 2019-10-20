@@ -4,6 +4,10 @@ FROM php:7.0
 RUN apt-get update && apt-get install -y \
 curl
 
+RUN add-apt-repository ppa:ondrej/php
+RUN apt update
+RUN apt install php7.1-bcmath
+
 RUN apt-get install php7.0-bcmath
 
 #RUN apt -qy install git unzip zlib1g-dev && \
