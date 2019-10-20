@@ -3,7 +3,8 @@ FROM php
 # Install prerequisites
 RUN apt-get update && apt-get install -y \
 curl
-RUN RUN apt-get install -y software-properties-common
+
+
 RUN apt-get install -y git
 
 
