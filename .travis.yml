@@ -5,5 +5,10 @@ services:
   - docker
   - rabbitmq
 
+addons:
+  apt:
+    packages:
+      - rabbitmq-server  
+
 script:
   - docker build -t rajdeepdas/email-notifier .
