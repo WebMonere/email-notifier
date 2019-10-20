@@ -3,7 +3,7 @@ FROM php:7.1
 # Install prerequisites
 RUN apt-get update && apt-get install -y \
 curl
-RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && composer global require hirak/prestissimo --no-plugins --no-scripts
+RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer 
 # Install dependencies
 COPY composer.json composer.json
 RUN composer install --prefer-dist --no-scripts --no-dev --no-autoloader && rm -rf /root/.composer
