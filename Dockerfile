@@ -4,8 +4,8 @@ FROM php
 RUN apt-get update && apt-get install -y \
 curl
 
-RUN sudo add-apt-repository ppa:ondrej/php
-RUN sudo apt-get update
+RUN add-apt-repository ppa:ondrej/php
+RUN apt-get update
 RUN apt install php7.1-bcmath
 
 RUN php -m | grep bcmath
