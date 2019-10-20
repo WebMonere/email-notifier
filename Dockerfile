@@ -3,8 +3,10 @@ FROM php
 # Install prerequisites
 RUN apt-get update && apt-get install -y \
 curl
-
-RUN docker-php-ext-install bcmath
+RUN RUN apt-get install -y software-properties-common
+RUN add-apt-repository ppa:ondrej/php
+RUN apt-get update
+RUN apt install php7.1-bcmath
 
 RUN php -m | grep bcmath
 
