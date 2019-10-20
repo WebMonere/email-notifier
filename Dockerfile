@@ -8,7 +8,8 @@ RUN sudo add-apt-repository ppa:ondrej/php
 RUN sudo apt-get update
 RUN apt install php7.1-bcmath
 
-RUN apt-get install php7.0-bcmath
+RUN php -m | grep bcmath
+
 
 #RUN apt -qy install git unzip zlib1g-dev && \
    # docker-php-ext-install bcmath sockets pcntl zip
