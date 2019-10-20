@@ -1,11 +1,11 @@
 #FROM kreait/php:7.1
-FROM php:7.0
+FROM php
 # Install prerequisites
 RUN apt-get update && apt-get install -y \
 curl
 
-RUN add-apt-repository ppa:ondrej/php
-RUN apt update
+RUN sudo add-apt-repository ppa:ondrej/php
+RUN sudo apt-get update
 RUN apt install php7.1-bcmath
 
 RUN apt-get install php7.0-bcmath
