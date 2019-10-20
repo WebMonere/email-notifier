@@ -3,6 +3,7 @@ php:
   - 7.1.9
 services:
   - docker
+  - rabbitmq
 
 script:
   - docker build -t rajdeepdas/email-notifier .
