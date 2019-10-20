@@ -10,5 +10,9 @@ addons:
     packages:
       - rabbitmq-server  
 
+before_install:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin      
+
 script:
   - docker build -t rajdeepdas/email-notifier .
+  - docker push rajdeepdas/email-notifier
