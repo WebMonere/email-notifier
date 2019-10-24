@@ -29,6 +29,7 @@ $callback = function ($msg) {
     $message = $arr["message"]; // Message Object
     
     $message_arr = json_decode($message,true);
+    $url = $message_arr["url"];
     $urlId = $message_arr["urlId"];
     $statusMessage = $message_arr["statusMessage"];
     $statusCode = $message_arr["statusCode"];
@@ -44,10 +45,10 @@ $callback = function ($msg) {
     // Create the Mailer using your created Transport
     $mailer = new Swift_Mailer($transport);
     // Create a message
-    $message = (new Swift_Message("Webmonere Critical Notiication"))
-    ->setFrom(['rajdeeponnet@gmail.com' => 'Webmonere Critical Notiication'])
+    $message = (new Swift_Message("Webmonere Critical Notification"))
+    ->setFrom(['rajdeeponnet@gmail.com' => 'Webmonere Critical Notification'])
     ->setTo($user_email)
-    ->setBody($statusMessage);
+    ->setBody("<h1>Your Url ".$url." Status :".$statusMessage." "."Status Code: ".$statusCode." "."and your app is : ".$appStatus."</h1>","text/html");
 
 
 
